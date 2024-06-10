@@ -165,7 +165,7 @@
                                   function(result) {
                                     if (result.length == 0) return;
                                     const imageElement = document.createElement("img");
-                                    const imageUrl = URL.createObjectURL(result.message);
+                                    imageElement.src = result.message;;
                                     const container = document.getElementById("dog-response");
                                     container.appendChild(imageElement);
                                   })
