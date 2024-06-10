@@ -123,11 +123,9 @@
                             <script>
 
                               function apiCall() {
-                                  $.get("https://v2.jokeapi.dev/joke/Any",
-                                  function(result) {
-                                    //console.log("From jokeAPI: " + JSON.stringify(result));
-                                    if (result.length == 0) return;
-                                    $("#response").html("A programming joke of the day: " + result.joke)
+                                  const apiUrl = "https://v2.jokeapi.dev/joke/Any";
+                                  fetch(apiUrl).then(data => {
+                                    console.log(data);
                                   })
                               }
                               apiCall();
