@@ -164,7 +164,7 @@
                                 $.get("https://xkcd.com/info.0.json",
                                   function(result) {
                                     if (result.length == 0) return;
-                                    $("#comic-response").html(result.img)
+                                    $("#comic-response").html("<img src=" + result.img + ">")
                                   })
                             </script>
                           </div>
