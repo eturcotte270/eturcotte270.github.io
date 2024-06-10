@@ -74,6 +74,18 @@
                             <script src="https://waph-uc.github.io/clock.js"></script>
 
                             <script>
+                                var shown = false;
+                                function showhideEmail(){
+                                  if (shown){
+                                    document.getElementById('email').innerHTML = "Show my email";
+                                    shown = false;
+                                  } else {
+                                    var myemail = "<a href='mailto:turcotea" + "@" + "mail.uc.edu'>turcotea" + "@" + "mail.uc.edu</a>";
+                                    document.getElementById('email').innerHTML = myemail;
+                                    shown = true;
+                                  }
+                                }
+
                                 function displayTime() {
                                   document.getElementById('digit-clock').innerHTML = encodeInput("Current time: " + new Date());
                                 }
@@ -94,7 +106,7 @@
                                   drawTime(ctx, radius);
                                 }
 
-                                
+
                                 function encodeInput (input) {
                                   const encoded = document.createElement('div');
                                   encoded.innerText = input;
