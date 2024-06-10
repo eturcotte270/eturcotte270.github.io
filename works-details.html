@@ -158,13 +158,16 @@
                               setInterval(apiCall, 60000);
                             </script>
 
-                            <h4>Comic API</h4>
-                            <div id="comic-response"></div>
+                            <h4>Dog API</h4>
+                            <div id="dog-response"></div>
                             <script>
-                                $.get("https://xkcd.com/info.0.json",
+                                $.get("https://dog.ceo/api/breeds/image/random",
                                   function(result) {
                                     if (result.length == 0) return;
-                                    $("#comic-response").html("<img src=" + result.img + ">")
+                                    const imageElement = document.createElement("img");
+                                    const imageUrl = URL.createObjectURL(result.message);
+                                    const container = document.getElementById("dog-response");
+                                    container.appendChild(imageElement);
                                   })
                             </script>
                           </div>
