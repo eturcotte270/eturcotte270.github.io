@@ -59,18 +59,39 @@
                           <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
                             <h3>Page Tracker</h3>
                             <a href="http://s11.flagcounter.com/more/g9y"><img src="https://s11.flagcounter.com/count2/g9y/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_4/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
-                              <p>Phasellus non faucibus purus, a venenatis diam. In faucibus orci mauris, porttitor egestas diam elementum non. Vestibulum non metus tempus, sagittis libero sed, euismod purus. Cras dolor nulla, hendrerit vitae libero eu, finibus ultricies dolor. Vestibulum non metus tempus, sagittis libero sed, euismod purus. Cras dolor nulla, hendrerit vitae libero eu, finibus ultricies dolor.</p>
 
-                              <p>Curabitur quis tortor sit amet ligula lobortis auctor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer ut turpis eget urna egestas maximus. </p>
+                            <h3>JavaScript Usage</h3>
+                            <h4>Show Email</h4>
+                            <div id="email" onclick="showhideEmail()">Show my email</div>
 
-                              <h2>Sub Title for project</h2>
-                              <p>Phasellus non faucibus purus, a venenatis diam. In faucibus orci mauris, porttitor egestas diam elementum non. Vestibulum non metus tempus, sagittis libero sed, euismod purus. Cras dolor nulla, hendrerit vitae libero eu, finibus ultricies dolor. Vestibulum non metus tempus, sagittis libero sed, euismod purus. Cras dolor nulla, hendrerit vitae libero eu, finibus ultricies dolor.</p>
+                            <h4>Digital Clock</h4>
+                            <div id="digit-clock"></div>
 
-                              <ul>
-                                <li>Phasellus non faucibus purus, a venenatis diam. In faucibus orci mauris, porttitor egestas diam elementum non.</li>
-                                 <li>Vestibulum non metus tempus, sagittis libero sed, euismod purus.</li>
-                                 <li>Vestibulum non metus tempus, sagittis libero sed, euismod purus. Cras dolor nulla, hendrerit vitae libero eu, finibus ultricies dolor. Vestibulum non metus tempus.</li>
-                              </ul>
+                            <h4>Analog Clock</h4>
+                            <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+                            <script src="https://waph-uc.github.io/clock.js"></script>
+
+                            <script>
+                                function displayTime() {
+                                  document.getElementById('digit-clock').innerHTML = encodeInput("Current time: " + new Date());
+                                }
+
+                                setInterval(displayTime, 500);
+
+                                // analog clock
+                                var canvas = document.getElementById("analog-clock");
+                                var ctx = canvas.getContext("2d");
+                                var radius = canvas.height / 2;
+                                ctx.translate(radius, radius);
+                                radius = radius * 0.90;
+                                setInterval(drawClock, 1000);
+
+                                function drawClock() {
+                                  drawFace(ctx, radius);
+                                  drawNumbers(ctx, radius);
+                                  drawTime(ctx, radius);
+                                }
+                            </script>
                           </div>
                       </div>
                   </div>
