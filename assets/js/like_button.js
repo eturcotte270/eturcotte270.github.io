@@ -8,7 +8,7 @@ class myButton extends React.Component {
  
   render() { 
     if (this.state.isliked) { 
-      return 'Yes I Really Like This.'; 
+      return 'I like this page!!!'; 
     } 
  
     return e( 
