@@ -121,17 +121,16 @@
                             <h4>Joke API</h4>
                             <div id="joke-response"></div>
                             <script>
-                              function apiResult(result) {
-                                  //console.log("From jokeAPI: " + JSON.stringify(result));
-                                  if (result.length == 0) return;
-                                  $("#joke-response").html("A programming joke: " + result.joke)
-                              }
 
                               function apiCall() {
-                                const res = fetch ("https://v2.jokeapi.dev/joke/Any");
-                                console.log(res);
-                                apiResult(res);
+                                  $.get("https://v2.jokeapi.dev/joke/Any",
+                                  function(result) {
+                                    //console.log("From jokeAPI: " + JSON.stringify(result));
+                                    if (result.length == 0) return;
+                                    $("#response").html("A programming joke of the day: " + result.joke)
+                                  })
                               }
+                              apiCall();
                               setInterval(apiCall, 30000);
                             </script>
 
