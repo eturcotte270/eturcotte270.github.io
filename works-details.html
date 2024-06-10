@@ -136,18 +136,16 @@
                                         if(randomJoke.type == "single")
                                         {
                                             // If type == "single", the joke only has the "joke" property
-                                            console.log(randomJoke.joke);
+                                            $("#response").html("A programming joke of the day: " + randomJoke.joke);
                                         }
                                         else
                                         {
-                                            // If type == "single", the joke only has the "joke" property
-                                            console.log(randomJoke.setup);
-                                            console.log(randomJoke.delivery);
+                                            $("#response").html("A programming joke of the day: " + randomJoke.setup +_randomJoke.delivery);
                                         }
                                     }
                                     else if(xhr.readyState == 4)
                                     {
-                                        alert("Error while requesting joke.\n\nStatus code: " + xhr.status + "\nServer response: " + xhr.responseText);
+                                      $("#response").html("Error while requesting joke.\n\nStatus code: " + xhr.status + "\nServer response: " + xhr.responseText);
                                     }
                                 };
 
