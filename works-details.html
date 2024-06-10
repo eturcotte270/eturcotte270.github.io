@@ -158,7 +158,15 @@
                               setInterval(apiCall, 60000);
                             </script>
 
-                            <h4>Weather API</h4>
+                            <h4>Comic API</h4>
+                            <div id="comic-response"></div>
+                            <script>
+                                $.get("https://xkcd.com/info.0.json",
+                                  function(result) {
+                                    if (result.length == 0) return;
+                                    $("#comic-response").html(result.img)
+                                  })
+                            </script>
                           </div>
                       </div>
                   </div>
