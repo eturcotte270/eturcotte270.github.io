@@ -127,7 +127,7 @@
                                   //console.log("From jokeAPI: " + JSON.stringify(result));
                                   if (result.length == 0) return;
                                   $("#joke-response").html("A programming joke: " + result.joke)
-                                }
+                                });
                               }
                               setInterval(apiCall, 30000);
                             </script>
