@@ -170,6 +170,19 @@
                                     container.appendChild(imageElement);
                                   })
                             </script>
+
+                            <br><br>
+                            <h3>Using Cookies</h3>
+                            <div id="cookies-response"></div>
+                            <script>
+                              if (document.cookie.indexOf("visit") <0 ){
+                                $("#cookies-response").html("Welcome to my homepage!");
+                                document.cookie = "visit=" + new Date();
+                              } else {
+                                $("#cookies-response").html("Welcome back! Your last visit was " + document.cookie);
+                                document.cookie = "visit=" + new Date();
+                              }
+                            </script>
                           </div>
                       </div>
                   </div>
