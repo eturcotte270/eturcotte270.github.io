@@ -28,13 +28,13 @@ Outcomes I learned:
 + Integrating APIs both that update and use graphics
 + Using Cookies
 
-### General requirements (30 pts): 
+### General requirements: 
 
 + Create and deploy a personal website on GitHub cloud (github.io) as a professional profile with your resume, including your name, headshot, contact information, background, e.g., education, your experiences and skills.
 
 I completed this task by my main page being my profile and then a link to a page that contains Individual Project 1 as I intended to use this long term. The below screenshot shows my main page:  
 
-![Professional Profile](assets/images/Homepage-Portfolio.jpg)
+![Professional Profile](assets/images/Homepage-Portfolio.png)
 
 \pagebreak
 
@@ -45,9 +45,9 @@ I completed this task by creating a button to link to waph.html, and I used the 
 <a href="waph.html" class="ds-button">Information</a>
 ```
 
-![Link to waph.html](assets/images/LinkToWaph.jpg)
+![Link to waph.html](assets/images/LinkToWaph.png)
 
-![waph.html page](assets/images/waph-html.jpg)
+![waph.html page](assets/images/waph-html.png)
 
 \pagebreak
 
@@ -66,7 +66,7 @@ To include the page tracker for location of visitors I added the following code:
 <a href="http://s11.flagcounter.com/more/g9y"><img src="https://s11.flagcounter.com/count2/g9y/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_4/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 ```
 
-![Page Tracker - Visitor Location](assets/images/PageTracker.jpg)
+![Page Tracker - Visitor Location](assets/images/PageTracker.png)
 
 \pagebreak
 
@@ -110,7 +110,7 @@ To show/hide my email I added the following HTML and JavaScript code:
   	}
 ```
 
-![Show/Hide Email](assets/images/ShowEmail.jpg)
+![Show/Hide Email](assets/images/ShowEmail.png)
 
 \pagebreak
 
@@ -137,7 +137,7 @@ To add a digital clock I added the following HTML and JavaScript code:
 
 ```
 
-![Digital Clock](assets/images/DigitalClock.jpg)
+![Digital Clock](assets/images/DigitalClock.png)
 
 \pagebreak
 
@@ -164,7 +164,7 @@ To add an analog clock I added the following HTML and JavaScript code:
 
 ```
 
-![Analog Clock](assets/images/AnalogClock.jpg)
+![Analog Clock](assets/images/AnalogClock.png)
 
 \pagebreak
 
@@ -201,7 +201,7 @@ const domContainer = document.querySelector('#like_button_container');
 ReactDOM.render(e(myButton), domContainer);
 ```
 
-![Like Button Result](assets/images/LikeButton.jpg)
+![Like Button Result](assets/images/LikeButton.png)
 
 \pagebreak
 
@@ -250,7 +250,7 @@ apiCall();
 setInterval(apiCall, 60000);
 ```
 
-![JokeAPI updates every minute](assets/images/JokeApi.jpg)
+![JokeAPI updates every minute](assets/images/JokeApi.png)
 
 \pagebreak
 
@@ -274,7 +274,7 @@ $.get("https://dog.ceo/api/breeds/image/random",
 })
 ```
 
-![Graphical API - Dogs](assets/images/DogApi.jpg)
+![Graphical API - Dogs](assets/images/DogApi.png)
 
 \pagebreak
 
@@ -296,8 +296,8 @@ if (document.cookie.indexOf("visit") <0 ){
 }
 ```
 
-![First Visit](assets/images/CookieDefault.jpg)
+![First Visit](assets/images/CookieDefault.png)
 
-![Return Visit](assets/images/CookiesRevisit.jpg)
+![Return Visit](assets/images/CookiesRevisit.png)
 
 
