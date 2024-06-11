@@ -179,7 +179,7 @@
                                 $("#cookies-response").html("Welcome to my homepage!");
                                 document.cookie = "visit=" + new Date();
                               } else {
-                                $("#cookies-response").html("Welcome back! Your last visit was " + document.cookie);
+                                $("#cookies-response").html("Welcome back! Your last visit was " + document.cookie("visit"));
                                 document.cookie = "visit=" + new Date();
                               }
                             </script>
