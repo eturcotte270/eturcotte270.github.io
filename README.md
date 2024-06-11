@@ -21,61 +21,283 @@ Site URL: [https://eturcotte270.github.io/](https://eturcotte270.github.io/)
 In this project, you will expand front-end web development skills by developing a Professional Profile Website and deploying it on `github.io` cloud service. This project has general, non-technical, and technical requirements with grade distributions as follows.
 
 Outcomes I learned:
++ Deploying a page on GitHub cloud
++ Linking to other HTML pages
++ Using a Bootstrap template
++ Using JavaScript jQuery and React
++ Integrating APIs both that update and use graphics
++ Using Cookies
 
 ### General requirements (30 pts): 
 
-+ Create and deploy a personal website on GitHub cloud (github.io) as a professional profile with your resume, including your name, headshot, contact information, background, e.g., education, your experiences and skills (25 pts).
- ​
-+ Create a link to a new HTML page to introduce this "Web Application Programming and Hacking" course and related hands-on projects (5 pts)
- ​
-### Non-technical requirements (20 pts)​
++ Create and deploy a personal website on GitHub cloud (github.io) as a professional profile with your resume, including your name, headshot, contact information, background, e.g., education, your experiences and skills.
 
-+ Use an open-source CSS template or framework such as Bootstrap​
+I completed this task by my main page being my profile and then a link to a page that contains Individual Project 1 as I intended to use this long term. The below screenshot shows my main page:  
+
+![Professional Profile](assets/images/Homepage-Portfolio.jpg)
+
+\pagebreak
+
++ Create a link to a new HTML page to introduce this "Web Application Programming and Hacking" course and related hands-on projects
+
+I completed this task by creating a button to link to waph.html, and I used the following code:
+```HTML
+<a href="waph.html" class="ds-button">Information</a>
+```
+
+![Link to waph.html](assets/images/LinkToWaph.jpg)
+
+![waph.html page](assets/images/waph-html.jpg)
+
+\pagebreak
+
+### Non-technical requirements  
+
++ Use an open-source CSS template or framework such as Bootstrap  
 [https://www.designstub.com/product/defolio-bootstrap-5-html-resume-template/](https://www.designstub.com/product/defolio-bootstrap-5-html-resume-template/)
+
+I used the template above and added my code in index.html, works-details.html, and waph.html.
 
 + Include a page tracker,
 [https://flagcounter.com/](https://flagcounter.com/).
 
-### Technical requirements (50 pts)​
+To include the page tracker for location of visitors I added the following code:
+```HTML
+<a href="http://s11.flagcounter.com/more/g9y"><img src="https://s11.flagcounter.com/count2/g9y/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_4/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+```
 
-#### Basic JavaScript code (20 pts)​
+![Page Tracker - Visitor Location](assets/images/PageTracker.jpg)
 
-+ Use jQuery and one more open-source JavaScript framework/library​ to implement JavaScript code introduced in Lab 2, including a digital clock, an analog clock, show/hide your email, and one more functionality of your choice.
+\pagebreak
 
-##### Show/hide email
+### Technical requirements   
+
+#### Basic JavaScript code   
+
+Use jQuery and one more open-source JavaScript framework/library to implement JavaScript code introduced in Lab 2, including a digital clock, an analog clock, show/hide your email, and one more functionality of your choice.  
+
+To add jQuery I added the following code:  
+```HTML
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+  	integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"></script>
+```
+
+To add React I added the following code:  
+```HTML
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+```
+
+##### Show/hide email  
+
+To show/hide my email I added the following HTML and JavaScript code:  
+```HTML
+<div id="email" onclick="showhideEmail()">Show my email</div>
+```
+
+```JavaScript
+    var shown = false;
+   	function showhideEmail(){
+        if (shown){
+            document.getElementById('email').innerHTML = "Show my email";
+            shown = false;
+        } else {
+          	var myemail = "<a href='mailto:turcotea" + "@" + "mail.uc.edu'>turcotea" + "@" + "mail.uc.edu</a>";
+            document.getElementById('email').innerHTML = myemail;
+        	shown = true;
+        }
+  	}
+```
+
+![Show/Hide Email](assets/images/ShowEmail.jpg)
+
+\pagebreak
 
 ##### Digital Clock
 
-##### Analog Clock
+To add a digital clock I added the following HTML and JavaScript code:  
+```HTML
+<div id="digit-clock"></div>
+```
+
+```JavaScript
+    var shown = false;
+	function displayTime() {
+        document.getElementById('digit-clock').innerHTML = encodeInput("Current time: " + new Date());
+   	}
+
+    setInterval(displayTime, 500);
+
+    function encodeInput (input) {
+        const encoded = document.createElement('div');
+        encoded.innerText = input;
+        return encoded.innerHTML;
+    }
+
+```
+
+![Digital Clock](assets/images/DigitalClock.jpg)
+
+\pagebreak
+
+##### Analog Clock  
+
+To add an analog clock I added the following HTML and JavaScript code:  
+```HTML
+<div id="digit-clock"></div>
+```
+
+```JavaScript
+    var canvas = document.getElementById("analog-clock");
+    var ctx = canvas.getContext("2d");
+    var radius = canvas.height / 2;
+    ctx.translate(radius, radius);
+    radius = radius * 0.90;
+    setInterval(drawClock, 1000);
+
+    function drawClock() {
+        drawFace(ctx, radius);
+        drawNumbers(ctx, radius);
+        drawTime(ctx, radius);
+    }
+
+```
+
+![Analog Clock](assets/images/AnalogClock.jpg)
+
+\pagebreak
 
 ##### Like Button using React
 
-+ Two public Web APIs integration (20 pts)​
+To add the like button using React I added the following HTML and JavaScript code:  
+```HTML
+<div id="like_button_container"></div>
+<script src="assets/js/like_button.js"></script>
+```
+
+```JavaScript
+'use strict'; 
+const e = React.createElement; 
+class myButton extends React.Component { 
+  constructor(props) { 
+    super(props); 
+    this.state = { isliked: false }; 
+  } 
+ 
+  render() { 
+    if (this.state.isliked) { 
+      return 'I like this page!!!'; 
+    } 
+ 
+    return e( 
+      'button', 
+      { onClick: () => this.setState({ isliked: true }) }, 
+      'Like Button' 
+    ); 
+  } 
+} 
+const domContainer = document.querySelector('#like_button_container'); 
+ReactDOM.render(e(myButton), domContainer);
+```
+
+![Like Button Result](assets/images/LikeButton.jpg)
+
+\pagebreak
+
+#### Two public Web APIs integration  
+
 ##### Joke API
-1. Integrate the jokeAPI ([https://v2.jokeapi.dev/joke/Any](https://v2.jokeapi.dev/joke/Any), similar to Lab 2.2.d.i) with `Any` category of joke to display a new joke in your page every 1 minute.
+1. Integrate the jokeAPI ([https://v2.jokeapi.dev/joke/Any](https://v2.jokeapi.dev/joke/Any)) with `Any` category of joke to display a new joke in your page every 1 minute.  
+
+To add the jokeAPI and have it update every minute I added teh following HTML and JavaScript code:  
+```HTML
+<div id="joke-response"></div>
+```
+
+```JavaScript
+function apiCall() {
+    var baseURL = "https://v2.jokeapi.dev/joke/Any";
+
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", baseURL);
+
+    xhr.onreadystatechange = function() {
+	    if(xhr.readyState == 4 && xhr.status < 300)
+	    {
+	      	var randomJoke = JSON.parse(xhr.responseText);
+
+	        if(randomJoke.type == "single")
+	        {
+	            $("#joke-response").html("A programming joke of the day: " + randomJoke.joke);
+	        }
+	        else
+	        {
+	            $("#joke-response").html("A programming joke of the day: " + randomJoke.setup + " " + randomJoke.delivery);
+	        }
+	    }
+	    else if(xhr.readyState == 4)
+	    {
+	        $("#joke-response").html("Error while requesting joke.\n\nStatus code: " + xhr.status + "\nServer response: " + xhr.responseText);
+	    }
+    };
+
+    xhr.send();
+}
+
+apiCall();
+setInterval(apiCall, 60000);
+```
+
+![JokeAPI updates every minute](assets/images/JokeApi.jpg)
+
+\pagebreak
 
 ##### Dog API
-2. Integrate a public API with graphics and display that graphic/image in your page. Examples: [https://xkcd.com/info.0.json](https://xkcd.com/info.0.json), [https://www.weatherbit.io](https://www.weatherbit.io).
+2. Integrate a public API with graphics and display that graphic/image in your page.  
+[https://dog.ceo/api/breeds/image/random](https://dog.ceo/api/breeds/image/random)  
 
-+ Use JavaScript cookies to remember the client (10 pts): If first-time visit, display the message "Welcome to my homepage for the first time!"; otherwise, display the message "Welcome back! Your last visit was <the date/time of last visit>" (ensure that you update this value <the date/time of last visit> each time the same user visits -2pts if missing).
+To add the graphical API that displays images of dogs I added the following HTML and JavaScript Code:  
+```HTML
+<div id="dog-response"></div>
+```
 
-## Report
+```JavaScript
+$.get("https://dog.ceo/api/breeds/image/random",
+    function(result) {
+        if (result.length == 0) return;
+        const imageElement = document.createElement("img");
+        imageElement.src = result.message;
+       	const container = document.getElementById("dog-response");
+        container.appendChild(imageElement);
+})
+```
 
-You must write a report using Markdown format following the template/outline provided in Lecture 2 ([https://github.com/phungph-uc/waph/blob/main/README-template.md](https://github.com/phungph-uc/waph/blob/main/README-template.md)) which should include the course name and instructor, your name and email together with your headshot (150x150 pixels), and sub-sections of the assignment's overview, and each task and sub-task.
+![Graphical API - Dogs](assets/images/DogApi.jpg)
 
-There should be an overview sub-section where you must write an overview of the assignment and the outcomes you learned from it. Include your website's clickable URL deployed on `github.io`. Also, include a direct clickable link to the project folder on GitHub.com so that it can be viewed when grading, for example, [https://github.com/phungph-uc/waph-phungph/tree/main/individual-project1](https://github.com/phungph-uc/waph-phungph/tree/main/individual-project1).
+\pagebreak
 
-For each sub-task, write a brief summary of how you completed it. You are welcome to include code snippets and screenshots to demonstrate the outcome; however, they are not required. **Please note that demo screenshots must include your name with proper captions and be visible, i.e., in high resolution, not too blurry, or with much blank space, for grading**. 
+#### JavaScript Cookies
+Use JavaScript cookies to remember the client: If first-time visit, display the message "Welcome to my homepage for the first time!"; otherwise, display the message "Welcome back! Your last visit was <the date/time of last visit>".  
 
-Your report must be exported in PDF with its contents and screenshots correctly rendered in proper order. The PDF file should be named `your-username-waph-project1.pdf`, e.g., `phungph-waph-project1.pdf`, and uploaded to Canvas to be submitted by the deadline. 
+To add the display message using JavaScript Cookies I added the following HTML and JavaScript code:  
+```HTML
+<div id="cookies-response"></div>
+```
+
+```JavaScript
+if (document.cookie.indexOf("visit") <0 ){
+    $("#cookies-response").html("Welcome to my homepage!");
+    document.cookie = "visit=" + new Date();
+} else {
+    $("#cookies-response").html("Welcome back! Your last visit was " + document.cookie.substring(6, ));
+    document.cookie = "visit=" + new Date();
+}
+```
+
+![First Visit](assets/images/CookieDefault.jpg)
+
+![Return Visit](assets/images/CookiesRevisit.jpg)
 
 
-## Deliverables and Submission
-
-You need to submit **three** deliverables in PDF files for grading:
-
-+ Your report mentioned above.
-
-+ Your deployed website printed from a browser in PDF.
-
-+  The source code of your deployed website printed from a browser in PDF.
